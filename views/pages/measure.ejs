@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title>Ormelo - Trial & Shop</title>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    background-color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+}
+.button-container {
+    padding-top: 36px;
+    margin: 0 auto;
+    position: relative;
+    width: 212px;
+    z-index: 1;
+}
+.btn {
+    display: block;
+    height: 50px;
+    width: 214px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: 2px;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    -webkit-border-radius: 34px;
+}
+.btn span {
+    position: relative;
+    top: 14px;
+    font-size: 18px;
+    letter-spacing: 0px;
+}
+.btn:after {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    background: #fe2f00;
+    background: -webkit-linear-gradient(45deg, #fe2f00 0%, #fe2f00 25%, #fe8748 81%, #fe8748 100%);
+    background: linear-gradient(45deg, #fe2f00 0%, #fe2f00 25%, #fe8748 81%, #fe8748 100%);
+    height: 50px;
+    width: 372px;
+    z-index: -1;
+    -webkit-transform: translateX(-280px);
+    transform: translateX(-280px);
+    -webkit-transition: -webkit-transform 400ms ease-in;
+    transition: -webkit-transform 400ms ease-in;
+    transition: transform 400ms ease-in;
+    transition: transform 400ms ease-in, -webkit-transform 400ms ease-in;
+}
+.btn:hover:after {
+    -webkit-transform: translateX(-200px);
+    transform: translateX(-200px);
+}
+@media (max-width: 599px){
+    .container{
+        with: 100%;
+    }
+    .glitter {
+      background-image: url(glitter.jpg);
+      height: 94px;
+      background-size: cover;
+      background-position-y: -15px;
+    }
+    .logo {
+      background-image: url(logom.png);
+      width: 122px;
+      height: 40px;
+      margin: 0 auto;
+      background-size: contain;
+      top: 26px;
+      position: relative;
+    }
+    .headline {
+      margin: 0 auto;
+      width: 340px;
+      font-size: 24px;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+    .description {
+      margin: 0 auto;
+      width: 80%;
+      font-size: 20px;
+      text-align: center;
+      line-height: 26px;
+      padding-bottom: 32px;
+    }
+    .gylph img {
+      width: 110px;
+    }
+    .gylph {
+        width: 123px;
+        margin: 0 auto;
+        left: 6px;
+        position: relative;
+    }
+    .button-container {
+      padding-top: 36px;
+      margin: 0 auto;
+      position: relative;
+      width: 212px;
+    }
+}
+@media (min-width: 600px){
+    .container{
+        with: 100%;
+    }
+    .btn {
+      width: 275px;
+    }
+    .glitter {
+      background-image: url(glitter.jpg);
+      height: 123px;
+      background-size: cover;
+      background-position-y: -31px;
+    }
+    .logo {
+      background-image: url(logom.png);
+      width: 147px;
+      height: 48px;
+      margin-top: 0px;
+      margin-left: 60px;
+      background-size: contain;
+      top: 40px;
+      position: relative;
+    }
+    .headline {
+      margin-left: 65px;
+      padding-top: 50px;
+      font-size: 30px;
+      letter-spacing: 2px;
+    }
+    .description {
+      margin-left: 65px;
+      width: 80%;
+      font-size: 20px;
+      padding-bottom: 50px;
+      margin-top: 12px;
+      line-height: 26px;
+    }
+    .gylph img {
+      width: 184px;
+      margin-left: 26px;
+    }
+    .gylph {
+        width: 200px;
+        margin: 0 auto;
+    }
+    .button-container {
+      padding-top: 36px;
+      margin: 0 auto;
+      position: relative;
+      width: 240px;
+    }
+}
+@media (min-width: 1025px){
+    .container{
+        width: 1025px;
+        margin: 0 auto;
+    }
+    .btn {
+      width: 275px;
+    }
+    .glitter {
+      background-image: url(glitter.jpg);
+      height: 123px;
+      background-size: cover;
+      background-position-y: -31px;
+    }
+    .logo {
+      background-image: url(logom.png);
+      background-size: contain;
+      position: relative;
+      width: 174px;
+      height: 57px;
+      left: 80px;
+      margin-top: 0px;
+      margin-left: 0px;
+      top: 30px;
+    }
+    .headline {
+      margin-left: 85px;
+      padding-top: 50px;
+      font-size: 36px;
+      letter-spacing: 2px;
+    }
+    .description {
+      margin-left: 85px;
+      width: 80%;
+      font-size: 24px;
+      padding-bottom: 50px;
+      margin-top: 12px;
+      line-height: 26px;
+    }
+    .gylph img {
+      width: 184px;
+      margin-left: 26px;
+    }
+    .gylph {
+        width: 200px;
+        margin: 0 auto;
+    }
+    .button-container {
+      padding-top: 36px;
+      margin: 0 auto;
+      position: relative;
+      width: 240px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+<div class="glitter">
+<div class="logo"></div>
+</div>
+<div class="headline"><span>TRIAL & SHOP</div><br>
+<div class="description">Get the right fit everytime you shop online!</div>
+<div class="gylph">
+  <img src="fit_gylph.png"/>
+</div>
+<div class="button-container">
+  <a href="onboard" class="btn"><span>Tell me how ></span></a>
+  </div>
+</div>
+<div class="glitter" style="margin-top:-100px;z-index:0;">
+</body>
+
+</html>
+

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title>Ormelo - Trial & Shop</title>
+<link rel="stylesheet" href="stylesheets/font-awesome.min.css">
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    background-color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+#slides {
+      display: none
+    }
+
+    #slides .slidesjs-navigation {
+      margin-top:3px;
+    }
+
+    #slides .slidesjs-previous {
+      margin-right: 5px;
+      float: left;
+    }
+
+    #slides .slidesjs-next {
+      margin-right: 5px;
+      float: left;
+    }
+
+    
+
+    .slidesjs-pagination li {
+      float: left;
+      margin: 0 4px;
+    }
+
+    .slidesjs-pagination li a {
+      display: block;
+      width: 9px;
+      height: 0;
+      padding-top: 8px;
+      background-image: url(img/pagination.png);
+      background-position: 0 0;
+      float: left;
+      overflow: hidden;
+    }
+
+    .slidesjs-pagination li a.active,
+    .slidesjs-pagination li a:hover.active {
+      background-position: 0 -15px;
+    }
+
+    .slidesjs-pagination li a:hover {
+      background-position: 0 -15px; 
+    }
+
+    #slides a:link,
+    #slides a:visited {
+      color: #333
+    }
+
+    #slides a:hover,
+    #slides a:active {
+      color: #9e2020
+    }
+
+    .navbar {
+      overflow: hidden
+    }
+
+    #slides {
+      display: none
+    }
+
+.button-container {
+    padding-top: 36px;
+    margin: 0 auto;
+    position: relative;
+    width: 212px;
+    z-index: 1;
+}
+.btn {
+    display: block;
+    height: 50px;
+    width: 220px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: 2px;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    -webkit-border-radius: 34px;
+}
+.btn span {
+    position: relative;
+    top: 14px;
+    font-size: 18px;
+    letter-spacing: 0px;
+}
+.btn:after {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    background: #fe2f00;
+    background: -webkit-linear-gradient(45deg, #fe2f00 0%, #fe2f00 25%, #fe8748 81%, #fe8748 100%);
+    background: linear-gradient(45deg, #fe2f00 0%, #fe2f00 25%, #fe8748 81%, #fe8748 100%);
+    height: 50px;
+    width: 372px;
+    z-index: -1;
+    -webkit-transform: translateX(-280px);
+    transform: translateX(-280px);
+    -webkit-transition: -webkit-transform 400ms ease-in;
+    transition: -webkit-transform 400ms ease-in;
+    transition: transform 400ms ease-in;
+    transition: transform 400ms ease-in, -webkit-transform 400ms ease-in;
+}
+.btn:hover:after {
+    -webkit-transform: translateX(-200px);
+    transform: translateX(-200px);
+}
+.gylph .img-container {
+  margin: 0 auto;
+  width: 200px;
+}
+@media (max-width: 599px){
+    .container{
+        with: 100%;
+    }
+    .slidesjs-pagination {
+      left: 0;
+      float: right;
+      list-style: none;
+      margin: 0 auto;
+      top: 0;
+      width: 59vw;
+    }
+    .glitter {
+      background-image: url(glitter.jpg);
+      height: 103px;
+      background-size: cover;
+      background-position-y: -15px;
+    }
+    .logo {
+      background-image: url(logos.png);
+      width: 26px;
+      height: 40px;
+      margin: 0 auto;
+      background-size: contain;
+      top: 26px;
+      position: absolute;
+      left: 20px;
+    }
+    .headline {
+      margin: 0 auto;
+      width: 280px;
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .description {
+      margin: 0 auto;
+      width: 80%;
+      font-size: 20px;
+      margin-top: 12px;
+      text-align: center;
+      line-height: 26px;
+      padding-bottom: 46px;
+    }
+    .gylph .img-container img {
+      width: 120px;
+    }
+    .gylph {
+        width: 300px;
+        margin: 0 auto;
+        left: 6px;
+        position: relative;
+    }
+    .button-container {
+      padding-top: 36px;
+      margin: 0 auto;
+      position: relative;
+      width: 212px;
+    }
+    .bubble {
+      top: -300px;position: relative;margin: 0 auto;width: 81px;float: right;right: 10vw;
+    }
+}
+@media (min-width: 600px){
+    .container{
+        with: 100%;
+    }
+    .slidesjs-pagination {
+      left: 0;
+      float: right;
+      list-style: none;
+      margin: 0 auto;
+      top: 0;
+      width: 51vw;
+    }
+    .glitter {
+      background-image: url(glitter.jpg);
+      height: 123px;
+      background-size: cover;
+      background-position-y: -31px;
+    }
+    .logo {
+      background-image: url(logom.png);
+      width: 147px;
+      height: 48px;
+      margin-top: 0px;
+      margin-left: 60px;
+      background-size: contain;
+      top: 40px;
+      position: relative;
+    }
+    .headline {
+      margin-left: 65px;
+      padding-top: 50px;
+      margin-bottom: 24px;
+      font-size: 30px;
+      text-align: center;
+    }
+    .description {
+      margin-left: 65px;
+      width: 80%;
+      font-size: 20px;
+      padding-bottom: 50px;
+      margin-top: 12px;
+      line-height: 26px;
+    }
+    .gylph .img-container img {
+      width: 120px;
+      margin-left: 26px;
+    }
+    .gylph {
+        width: 500px;
+        margin: 0 auto;
+    }
+    .button-container {
+      padding-top: 36px;
+      margin: 0 auto;
+      position: relative;
+      width: 186px;
+    }
+    .bubble {
+      top: -300px;position: relative;margin: 0 auto;width: 81px;float: right;right: 25vw;
+    }
+}
+@media (min-width: 1025px){
+    .container{
+        width: 1025px;
+        margin: 0 auto;
+    }
+    .slidesjs-pagination {
+      left: 0;
+      float: right;
+      list-style: none;
+      margin: 0 auto;
+      top: 0;
+      width: 50%;
+    }
+    .glitter {
+      background-image: url(glitter.jpg);
+      height: 123px;
+      background-size: cover;
+      background-position-y: -31px;
+    }
+    .logo {
+      background-image: url(logom.png);
+      background-size: contain;
+      position: relative;
+      width: 174px;
+      height: 57px;
+      left: 80px;
+      margin-top: 0px;
+      margin-left: 0px;
+      top: 30px;
+    }
+    .headline {
+      margin-left: 85px;
+      padding-top: 50px;
+      font-size: 36px;
+      text-align: center;
+    }
+    .description {
+      margin-left: 85px;
+      width: 80%;
+      font-size: 24px;
+      padding-bottom: 50px;
+      margin-top: 12px;
+      line-height: 26px;
+    }
+    .gylph .img-container img {
+      width: 120px;
+      margin-left: 26px;
+    }
+    .gylph {
+        width: 600px;
+        margin: 0 auto;
+    }
+    .button-container {
+      padding-top: 36px;
+      margin: 0 auto;
+      position: relative;
+      width: 156px;
+    }
+    .bubble {
+      top: -300px;position: relative;margin: 0 auto;width: 81px;float: right;right: 36vw;
+    }
+}
+
+
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeInUp {
+  0% {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  }
+  100% {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+  }
+  }
+  @keyframes fadeInUp {
+  0% {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  }
+  100% {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+  }
+  } 
+
+  .fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeInRight {
+  0% {
+  opacity: 0;
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+  }
+  100% {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+  }
+  }
+  @keyframes fadeInRight {
+  0% {
+  opacity: 0;
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+  }
+  100% {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+  }
+  }
+
+</style>
+
+</head>
+
+<body>
+<div class="container">
+<div class="glitter">
+<div class="logo"></div>
+</div>
+<div >
+<div class="gylph">
+  <div class="headline fadeInRight">Ordering clothes online has always been frustrating!</div>
+  <div class="img-container">
+  <img class="slideImg" style="width:190px;left:-60px;visibility: visible;" src="img/001.png"/>
+  </div>
+  <img style="width:0px;" src="img/2.png"/>
+  <img style="Width:0px;" src="img/3.png"/>
+</div>
+  <div id="slides">
+    <div class="gylph">
+    <img style="margin-left: 25vw;" />
+    </div>
+    <div class="gylph">
+    <img style="margin-left: 25vw;width: 300px;"/>
+    </div>
+    <div class="gylph">
+    <img style="margin-left: 25vw;width: 300px;"/>
+    </div>
+    <div class="gylph">
+    <img style="margin-left: 25vw;width: 300px;"/>
+    </div>
+    <div class="gylph">
+    <img style="margin-left: 25vw;width: 300px;"/>
+    </div>
+  </div>
+</div>
+<div class="button-container">
+  <a href="#" id="next" class="btn slidesjs-next" style="visibility: hidden" onclick="slider.next();"><span class="cta">Next ></span></a>
+  </div>
+</div>
+<img class="bubble" style="display: none" src="img/msg_badfit.png">
+<div class="glitter" style="margin-top:-58px;z-index:0;">
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="scripts/jquery.slides.min.js"></script>
+<script>
+    $(function() {
+      $('#slides').slidesjs({
+        navigation: false
+      });
+    });
+
+
+function playAnim() {
+  if($('.slideImg').attr('src')=='img/001.png') {
+    setTimeout(function(){$('.slideImg').css('visibility','visible');},2600);
+    setTimeout(function(){$('.slideImg').attr('src','img/002.png');},2500);
+    setTimeout(function(){$('.bubble').show();},2900);
+    setTimeout(function(){$('.slideImg').attr('src','img/003.png');},4600);
+    setTimeout(function(){$('.bubble').attr('src','img/msg_badcolor.png');},4600);
+    setTimeout(function(){$('.slideImg').attr('src','img/004.png');},6300);
+    setTimeout(function(){$('.bubble').attr('src','img/msg_poorquality.png');},6300);
+    setTimeout(function(){$('#next').css('visibility','visible');},6400);
+  }
+}
+
+playAnim();
+
+</script>
+</body>
+
+</html>
+
