@@ -20,7 +20,7 @@ class Home extends Component {
         const numProps = Object.keys(this.props).length - 1; // discounting title
         return (
           <div style={wrapperStyles}>
-            <div className="description">Equalizer Demo</div>
+            <div className="description">Equalizer Demo1</div>
             <h2 style={headingTwoStyles}>{this.props.title}</h2>
             <div className="slider-container" style={{marginLeft: '0px'}}>
               <ReactSimpleRange label vertical {...this.props} />
