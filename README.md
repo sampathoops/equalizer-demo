@@ -1,5 +1,7 @@
 #Equalizer Demo
 
+Heroku URL: https://equalizer-ui.herokuapp.com/
+
 Instructions to setup the application:
 
 Pre-requisites:
