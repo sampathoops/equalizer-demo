@@ -8,8 +8,7 @@ var UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 var config = {
   entry: {
-    app: APP_DIR + '/index.jsx',
-    wiz: WIZ_DIR + '/shareList.jsx'
+    app: APP_DIR + '/index.jsx'
   },
   output: {
     path: BUILD_DIR,
@@ -25,16 +24,6 @@ var config = {
       {
         test : /\.jsx?/,
         include : APP_DIR,
-        exclude: [/node_modules/],
-        loader : 'babel',
-        query:
-        {
-          presets: ['es2015','react','stage-2']
-        }
-      },
-      {
-        test : /\.jsx?/,
-        include : WIZ_DIR,
         exclude: [/node_modules/],
         loader : 'babel',
         query:

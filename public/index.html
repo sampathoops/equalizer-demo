@@ -23,68 +23,12 @@ html{
     margin: 0 auto;
     margin-top: 100px;
 }
-@font-face{
-  font-family:'proxima';
-  src: url('fonts/Proxima.otf');
-}
 .button-container {
     padding-top: 36px;
     margin: 0 auto;
     position: relative;
     width: 212px;
     z-index: 1;
-}
-.btn {
-    display: block;
-    height: 50px;
-    width: 214px;
-    font-family: proxima;
-    position: relative;
-    overflow: hidden;
-    text-decoration: none;
-    text-transform: none;
-    letter-spacing: 2px;
-    color: white;
-    font-size: 14px;
-    text-align: center;
-    -webkit-border-radius: 34px;
-}
-.btn span {
-    position: relative;
-    top: 14px;
-    font-size: 18px;
-    letter-spacing: 0px;
-}
-.btn:after {
-    position: absolute;
-    content: '';
-    display: inline-block;
-    background: #7243a9;
-    background: -webkit-linear-gradient(45deg, #2d9b1b 0%, #2b9a1a 25%, #82cb76 81%, #53b941 100%);
-    background: linear-gradient(45deg, #2d9b1b 0%, #2b9a1a 25%, #82cb76 81%, #53b941 100%);
-    height: 50px;
-    width: 402px;
-    z-index: -1;
-    -webkit-transform: translateX(-280px);
-    transform: translateX(-280px);
-    -webkit-transition: -webkit-transform 400ms ease-in;
-    transition: -webkit-transform 400ms ease-in;
-    transition: transform 400ms ease-in;
-    transition: transform 400ms ease-in, -webkit-transform 400ms ease-in;
-}
-.btn:hover:after {
-    -webkit-transform: translateX(-200px);
-    transform: translateX(-200px);
-}
-.fader {
-    -moz-transition: opacity 0.7s linear;
-    -o-transition: opacity 0.7s linear;
-    -webkit-transition: opacity 0.7s linear;
-    transition: opacity 0.7s linear;
-}
-
-.fadedOut {
-    opacity: 0;
 }
 .slider-container {
   display: inline-block;
@@ -94,6 +38,18 @@ html{
   margin-top: 16px;
   font-size: 18px;
 }
+.dot {
+  transition: box-shadow .6s;
+  -webkit-transition: box-shadow .6s;
+  -moz-transition: box-shadow .6s;
+  opacity: 1;
+  background: -webkit-linear-gradient(45deg, #2d9b1b 0%, #2b9a1a 25%, #82cb76 81%, #53b941 100%);
+  background: linear-gradient(45deg, #2d9b1b 0%, #2b9a1a 25%, #82cb76 81%, #53b941 100%);
+}
+.dot:hover {
+  box-shadow: 0 0 0 4px #c1f2ac;
+}
+
 @media (max-width: 599px){
     .container{
         with: 100%;
@@ -282,7 +238,6 @@ html{
 <!--Bundled file-->
 
 <script src="app.bundle.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
 </body>
 </html>

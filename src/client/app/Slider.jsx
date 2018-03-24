@@ -2,11 +2,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import SliderThumb from './SliderThumb.jsx';
-import SliderLabel from './SliderLabel.jsx';
+import Sliderdot from './Sliderdot.jsx';
 import SliderTrack from './SliderTrack.jsx';
 
-function noOp() {}
+function defaultOnChange() {}
 
 export default class Slider extends Component {
   static propTypes = {
@@ -23,29 +22,29 @@ export default class Slider extends Component {
     eventWrapperPadding: PropTypes.number,
     label: PropTypes.bool,
     disableTrack: PropTypes.bool,
-    disableThumb: PropTypes.bool,
+    disableDot: PropTypes.bool,
     sliderColor: PropTypes.string,
     trackColor: PropTypes.string,
-    thumbColor: PropTypes.string,
+    dotColor: PropTypes.string,
     sliderSize: PropTypes.number,
-    thumbSize: PropTypes.number,
+    dotSize: PropTypes.number,
     id: PropTypes.string,
   }
   static defaultProps = {
     min: 0,
     max: 100,
     step: 1,
-    onChange: noOp,
-    onChangeComplete: noOp,
+    onChange: defaultOnChange,
+    onChangeComplete: defaultOnChange,
     vertical: false,
     verticalSliderHeight: '200px',
     eventWrapperPadding: 8,
     label: false,
     disableTrack: false,
-    disableThumb: false,
+    disableDot: false,
     sliderColor: '#B9B9B9',
     trackColor: '#5c72fd',
-    thumbColor: '#5b94fe',
+    dotColor: '#5b94fe',
     sliderSize: 6,
     id: null,
   }
@@ -64,11 +63,6 @@ export default class Slider extends Component {
     this.updateStateFromProps(this.props);
   }
   componentDidMount() {
-    if (this.props.onChange.name === 'noOp') {
-      console.warn(
-        `A react-simple-range component was not provided an onChange prop.
-        \nRecommend passing down a function as onChange else this component is purely cosmetic`);
-    }
     this.computeSliderColor(this.props.value);
   }
   componentWillReceiveProps(nextProps) {
@@ -76,8 +70,8 @@ export default class Slider extends Component {
   }
   colorValPerc(percent, start, end) {
     var a = percent / 100,
-        b = (end - start) * a,
-        c = b + start;
+        b = (start - end) * a,
+        c = start - b;
 
     // Return a CSS HSL string
     return 'hsl('+c+', 100%, 50%)';
@@ -164,10 +158,9 @@ export default class Slider extends Component {
     value = this.calculateMatchingNotch(rawValue);
     // avoid repeated updates of the same value
     if (value === this.state.value) return;
-    // percentage of the range to render the track/thumb to
+    // percentage of the range to render the track/dot to
     const ratio = (value - min) * 100 / (max - min);
     this.computeSliderColor(value);
-    console.log('value: ', value);
     this.setState({
       percent,
       value,
@@ -208,12 +201,12 @@ export default class Slider extends Component {
     return Math.max(min, Math.min(val, max));
   }
   updateStateFromProps(props) {
-    let { value, thumbSize } = props;
+    let { value, dotSize } = props;
     if (value === undefined) {
       value = (props.defaultValue !== undefined ? props.defaultValue : 0);
     }
-    if (props.thumbSize === undefined) {
-      thumbSize = (this.props.disableThumb ? 0 : props.sliderSize * 3);
+    if (props.dotSize === undefined) {
+      dotSize = (this.props.disableDot ? 0 : props.sliderSize * 3);
     }
     const { min, max, step, id } = props;
     const range = max - min;
@@ -225,7 +218,7 @@ export default class Slider extends Component {
       range,
       step,
       ratio,
-      thumbSize,
+      dotSize,
       id,
     });
     this.computeSliderColor(value);
@@ -234,12 +227,12 @@ export default class Slider extends Component {
     const {
       vertical,
       sliderSize,
-      disableThumb,
+      disableDot,
       disableTrack,
       children,
       label,
       trackColor,
-      thumbColor,
+      dotColor,
       verticalSliderHeight,
       eventWrapperPadding,
     } = this.props;
@@ -262,6 +255,9 @@ export default class Slider extends Component {
       borderRadius: '6px',
       webkitBorderRadius: '6px',
       overflow: 'visible',
+      boxShadow: 'inset 0 0 2px #4e4e4e',
+      webkitBoxShadow: 'inset 0 0 2px #4e4e4e',
+      mozBoxShadow: 'inset 0 0 2px #4e4e4e',
       get height() {
         return !vertical
         ? `${sliderSize}px`
@@ -288,14 +284,14 @@ export default class Slider extends Component {
             : null
           }
           
-          <SliderThumb
+          <Sliderdot
             position={this.state.ratio}
             vertical={vertical}
-            customThumb={children}
-            thumbSize={this.state.thumbSize}
+            customdot={children}
+            dotSize={this.state.dotSize}
             sliderSize={sliderSize}
-            color={thumbColor}
-            disableThumb={disableThumb}
+            color={dotColor}
+            disableDot={disableDot}
             value={this.state.value}
           />
 

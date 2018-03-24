@@ -41,8 +41,8 @@ class Equalizer extends Component {
           <div style={wrapperStyles}>
             <div className="description">Equalizer Demo</div>
             <br/><br/>
-            <div className="description" style={{fontSize: '20px'}}>Choose a preset: 
-            <select style={{marginLeft: '12px'}} onChange={this.changePreset}>
+            <div className="description" style={{fontSize: '20px'}}>Select a preset: 
+            <select style={{marginLeft: '12px', fontSize: '16px'}} onChange={this.changePreset}>
               <option value='default'>Default</option>
               <option value='rock'>Rock</option>
               <option value='pop'>Pop</option>
