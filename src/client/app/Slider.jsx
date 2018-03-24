@@ -57,6 +57,8 @@ export default class Slider extends Component {
     this.onInteractionStart = this.onInteractionStart.bind(this);
     this.onMouseOrTouchMove = this.onMouseOrTouchMove.bind(this);
     this.onInteractionEnd = this.onInteractionEnd.bind(this);
+    this.computeSliderColor = this.computeSliderColor.bind(this);
+    this.colorValPerc = this.colorValPerc.bind(this);
   }
   componentWillMount() {
     this.updateStateFromProps(this.props);
@@ -67,10 +69,25 @@ export default class Slider extends Component {
         `A react-simple-range component was not provided an onChange prop.
         \nRecommend passing down a function as onChange else this component is purely cosmetic`);
     }
+    this.computeSliderColor(this.props.value);
   }
   componentWillReceiveProps(nextProps) {
     this.updateStateFromProps(nextProps);
   }
+  colorValPerc(percent, start, end) {
+    var a = percent / 100,
+        b = (end - start) * a,
+        c = b + start;
+
+    // Return a CSS HSL string
+    return 'hsl('+c+', 100%, 50%)';
+  }
+  computeSliderColor(val) {
+    const red = 0;
+    const green = 120;
+    let sliderColor = this.colorValPerc(val, red, green);
+    this.setState({sliderColor: sliderColor});
+  } 
   onInteractionStart(e) {
     const eventType = (e.touches !== undefined ? 'touch' : 'mouse');
     const leftMouseButton = 0;
@@ -124,6 +141,7 @@ export default class Slider extends Component {
     document.removeEventListener('touchmove', this.onMouseOrTouchMove);
     document.removeEventListener('touchend', this.onInteractionEnd);
   }
+  //called on dragging slider
   updateSliderValue(e, eventType) {
     const { max, min } = this.state;
     const { vertical } = this.props;
@@ -148,6 +166,8 @@ export default class Slider extends Component {
     if (value === this.state.value) return;
     // percentage of the range to render the track/thumb to
     const ratio = (value - min) * 100 / (max - min);
+    this.computeSliderColor(value);
+    console.log('value: ', value);
     this.setState({
       percent,
       value,
@@ -208,6 +228,7 @@ export default class Slider extends Component {
       thumbSize,
       id,
     });
+    this.computeSliderColor(value);
   }
   render() {
     const {
@@ -236,7 +257,7 @@ export default class Slider extends Component {
       get width() { return !vertical ? 'auto' : `${sliderSize}px`; },
     };
     const sliderStyle = {
-      backgroundColor: this.props.sliderColor,
+      backgroundColor: this.state.sliderColor,
       position: 'relative',
       borderRadius: '6px',
       webkitBorderRadius: '6px',
@@ -266,17 +287,7 @@ export default class Slider extends Component {
             />
             : null
           }
-          {label && this.state.displayLabel
-            ? <SliderLabel
-              position={this.state.ratio}
-              vertical={vertical}
-              color={trackColor}
-              value={this.state.value}
-              sliderSize={sliderSize}
-              thumbSize={this.state.thumbSize}
-            />
-            : null
-          }
+          
           <SliderThumb
             position={this.state.ratio}
             vertical={vertical}

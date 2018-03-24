@@ -7,7 +7,9 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 const presets = {
   default: {band1: 20, band2: 40, band3: 80, band4: 40, band5: 20},
   'rock': {band1: 80, band2: 60, band3: 40, band4: 20, band5: 10},
-  'pop': {band1: 10, band2: 20, band3: 60, band4: 20, band5: 10}
+  'pop': {band1: 10, band2: 20, band3: 60, band4: 20, band5: 10},
+  'jazz': {band1: 50, band2: 40, band3: 30, band4: 80, band5: 75},
+  'classical': {band1: 30, band2: 70, band3: 70, band4: 30, band5: 20}
 }
 
 class Equalizer extends Component {
@@ -44,6 +46,8 @@ class Equalizer extends Component {
               <option value='default'>Default</option>
               <option value='rock'>Rock</option>
               <option value='pop'>Pop</option>
+              <option value='jazz'>Jazz</option>
+              <option value='classical'>Classical</option>
             </select></div>
             <h2 style={headingTwoStyles}>{this.props.title}</h2>
             <div className="slider-container" style={{marginLeft: '0px'}}>

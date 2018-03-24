@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 const SliderTrack = ({ trackLength, color, vertical }) => {
   let trackStyles = {
-    backgroundColor: color,
     borderRadius: '6px',
     webkitBorderRadius: '6px',
     get width() { return !vertical ? `${trackLength}%` : '100%'; },
