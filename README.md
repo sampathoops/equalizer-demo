@@ -4,9 +4,8 @@ Instructions to setup the application:
 
 Pre-requisites:
 
-git command line
-NodeJS: v8.9.3 or higher
-NPM: v3 or higher
+1. git command line
+2. NodeJS: v6.1.0 or higher, npm 3.8.6 or higher
 
 Steps:
 
